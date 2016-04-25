@@ -14,7 +14,6 @@
     bootstrapUrl: "bootstrap.json"
   });
 
-
   var calloutDelegate = {
 
     calloutContentForAnnotation: function(annotation) {
@@ -30,14 +29,10 @@
       subtitle.className = "mk-subtitle";
 		  subtitle.textContent = annotation.subtitle;
 
-//        var link = element.appendChild(document.createElement("a"));
-//        link.href = annotation.data.directionsLink;
-//        link.textContent = "Get directions";
-
         return element;
     }
 };
-  var map = new mapkit.Map('map');
+  var map = new mapkit.Map('map', {tintColor:"red"});
 
   var pg = new mapkit.CoordinateRegion(
     new mapkit.Coordinate(53.92, -122.75),
@@ -55,9 +50,6 @@
     url: {
 				1: "spk_marker.png",
 		},
-//		data: {
-//        	directionsLink: "http://maps.apple.com/maps?"
-//        },
 		anchorOffset: new DOMPoint(-7, -2)
 };
 
