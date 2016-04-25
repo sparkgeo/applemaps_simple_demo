@@ -15,25 +15,23 @@
   });
 
   var calloutDelegate = {
-
     calloutContentForAnnotation: function(annotation) {
-		var element = document.createElement("div");
-        element.className = "mk-standard";
+      var element = document.createElement("div");
+      element.className = "mk-standard";
 
- 		var title = element.appendChild(document.createElement("div"));
-        title.className = "mk-title";
-		title.textContent = annotation.title;
+ 		  var title = element.appendChild(document.createElement("div"));
+      title.className = "mk-title";
+      title.textContent = annotation.title;
 
-		var subtitle = element.appendChild(document.createElement("a"));
+		  var subtitle = element.appendChild(document.createElement("a"));
       subtitle.href = "https://www.sparkgeo.com";
       subtitle.className = "mk-subtitle";
 		  subtitle.textContent = annotation.subtitle;
-
-        return element;
+      return element;
     }
-};
-  var map = new mapkit.Map('map', {tintColor:"red"});
+  };
 
+  var map = new mapkit.Map('map');
   var pg = new mapkit.CoordinateRegion(
     new mapkit.Coordinate(53.92, -122.75),
     new mapkit.CoordinateSpan(0.16, 0.16)
@@ -45,8 +43,8 @@
 
   var sparkgeoOffice = {
 		callout: calloutDelegate,
-		title: "Sparkgeo Office",
-		subtitle: "Living the awesome",
+		title: "Oh No! I hope we didn't spoil the surprise!",
+		subtitle: "The API key we 'borrowed' now isn't working... there are just a bunch of 403s for image tiles now!",
     url: {
 				1: "spk_marker.png",
 		},
@@ -58,7 +56,7 @@
   map.showsUserLocation = false;
   map.showsUserLocationControl = true;
 
-  console.log(map)
+  //console.log(map)
 </script>
 </body>
 </html>
